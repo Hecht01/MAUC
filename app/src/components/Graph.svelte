@@ -26,11 +26,11 @@
     import {onMount} from "svelte";
 
 
-    let prices: Price[];
+    let oxygen: Oxygen[];
     let labels_graph: string[] = [];
-    let prices_graph: number[] = [];
-    let sentiments: Stock[] = [];
-    let sentiments_graph: number[] = [];
+    let oxygen_graph: number[] = [];
+    let heartRate: HeartRate[] = [];
+    let heart_rate_graph: number[] = [];
 
     onMount(async function () {
         const response_price = await fetch(__API_ADDRESS__ + "/api/StockDataFor/" + title);
@@ -39,27 +39,27 @@
         const data_sentiment = await response_sentiment.json();
         console.log(params_price);
         console.log(data_sentiment);
-        prices = params_price;
-        sentiments = data_sentiment;
-        for(let i = prices.length-1; i >= 0; i--) {
-            prices_graph.push(Number(prices[i].stock_price_val));
-            labels_graph.push(prices[i].stock_price_time.slice(0, 10));
+        oxygen = params_price;
+        heartRate = data_sentiment;
+        for(let i = oxygen.length-1; i >= 0; i--) {
+            oxygen_graph.push(Number(oxygen[i].stock_price_val));
+            labels_graph.push(oxygen[i].stock_price_time.slice(0, 10));
         }
-        for(let i = sentiments.length-1; i >= 0; i--){
-            let sentiment = Math.round(Number(sentiments[i].avg_sentiment)*100)/ 100
-            sentiments_graph.push(sentiment);
+        for(let i = heartRate.length-1; i >= 0; i--){
+            let sentiment = Math.round(Number(heartRate[i].avg_sentiment)*100)/ 100
+            heart_rate_graph.push(sentiment);
 
         }
-        prices_graph = prices_graph;
-        sentiments_graph = sentiments_graph;
+        oxygen_graph = oxygen_graph;
+        heart_rate_graph = heart_rate_graph;
     });
 
-    interface Price{
+    interface Oxygen {
         stock_price_val: string;
         stock_price_time: string;
     }
 
-    interface Stock{
+    interface HeartRate {
         name: string;
         ticker_symbol: string;
         avg_sentiment: string;
@@ -71,8 +71,8 @@
         labels: labels_graph,
         datasets: [
             {
-                label: 'Sentiment',
-                data: sentiments_graph,
+                label: 'Oxygen',
+                data: heart_rate_graph,
                 yAxisID: 'y',
                 tension: 0.3,
                 borderWidth: 0,
@@ -84,8 +84,8 @@
                 pointRadius: 1
             },
             {
-                label: 'Price',
-                data: prices_graph,
+                label: 'Heart Rate in bpm',
+                data: oxygen_graph,
                 borderColor: 'black',
                 borderWidth: 2,
                 pointRadius: 1,
@@ -103,6 +103,7 @@
         border: 1px solid gainsboro;
         padding: 20px;
         border-radius: 8px;
+        margin-top: 20px;
         margin-bottom: 50px;
     }
 
@@ -113,7 +114,7 @@
 </style>
 
 <main>
-    <h2>Historical Sentiment and Price</h2>
+    <h2>Pulse Data Graph</h2>
     <div class="graph">
         <Line data = {data}
               height = {700}
