@@ -19,7 +19,11 @@ const db = new sqlite3.Database('./Database', (err) => {
 
 app.put('/insertPulseData', function (req, res)
 {
-    const {heartRate, rawInfrared, oxygen, userName} = req.body;
+    const heartRate = req.body.heartRate;
+    const rawInfrared = req.body.rawInfrared
+    const oxygen = req.body.oxygen
+    const userName = req.body.username;
+
     const query = `
         INSERT INTO pulse_data (timestamp, heartRate, rawInfrared, oxygen, user_name)
         VALUES (time ('now'), $1, $2, $3, $4)`
