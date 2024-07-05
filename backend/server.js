@@ -29,6 +29,7 @@ app.put('/insertPulseData', function (req, res)
         VALUES (time ('now'), $1, $2, $3, $4)`
     try {
         db.run(query, [heartRate, rawInfrared, oxygen, userName]);
+        console.log(`heartRate: ${heartRate}, rawInfrared: ${rawInfrared}, oxygen: ${oxygen}`);
         res.status(200).send({heartRate, rawInfrared, oxygen});
     } catch (err) {
         console.error('Error executing query', err.message);
