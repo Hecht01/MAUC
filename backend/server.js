@@ -17,12 +17,12 @@ const db = new sqlite3.Database('./database', (err) => {
 
 app.put('/api/insertPulseData', function (req, res)
 {
-    const {heartRate, rawInfrared, oxygen} = req.body;
+    const {heartRate, rawInfrared, oxygen, userName} = req.body;
     const query = `
-        INSERT INTO pulseData (timeStamp, heartRate, rawInfrared, oxygen)
-        VALUES (time ('now'), $1, $2, $3)`
+        INSERT INTO pulseData (timeStamp, heartRate, rawInfrared, oxygen, user_name)
+        VALUES (time ('now'), $1, $2, $3, $4)`
     try {
-        db.run(query, [heartRate, rawInfrared, oxygen]);
+        db.run(query, [heartRate, rawInfrared, oxygen, userName]);
         res.status(200).send({heartRate, rawInfrared, oxygen});
     } catch (err) {
         console.error('Error executing query', err.message);
@@ -30,8 +30,26 @@ app.put('/api/insertPulseData', function (req, res)
     }
 })
 
+app.get('api/get/allPulseDataFor/:userName', async function (req, res) {
+    const query = `
+        SELECT *
+        FROM pulseData
+        WHERE user_name = $5`
+
+    try {
+        const result = await db.each(query, [String(req.query.userName)], (err, row) => {
+            res.status(200).send(`${row.time} ${row.heartRate} ${row.rawInfrared} ${row.oxygen}`);
+        });
+
+    } catch (err) {
+        console.error('Error executing query', err.message);
+        res.status(500).send('Internal server error');
+    }
+})
 
 app.listen(port, function (err) {
     if (err) console.log(err);
     console.log(`Server listening on PORT ${port}`);
 });
+
+db.close();
