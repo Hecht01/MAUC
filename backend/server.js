@@ -19,7 +19,7 @@ app.put('/api/insertPulseData', function (req, res)
 {
     const {heartRate, rawInfrared, oxygen, userName} = req.body;
     const query = `
-        INSERT INTO pulseData (timestamp, heartRate, rawInfrared, oxygen, user_name)
+        INSERT INTO pulse_data (timestamp, heartRate, rawInfrared, oxygen, user_name)
         VALUES (time ('now'), $1, $2, $3, $4)`
     try {
         db.run(query, [heartRate, rawInfrared, oxygen, userName]);
@@ -33,7 +33,7 @@ app.put('/api/insertPulseData', function (req, res)
 app.get('/api/getAllPulseDataFor/:userName', async function (req, res) {
     const query = `
         SELECT *
-        FROM pulseData
+        FROM pulse_data
         WHERE user_name = $5`
 
     try {
@@ -50,7 +50,7 @@ app.get('/api/getAllPulseDataFor/:userName', async function (req, res) {
 app.get('/api/getAllPulseDataFor', async function (req, res) {
     const query = `
         SELECT *
-        FROM pulseData
+        FROM pulse_data
         `
     try {
             const result = await db.all(query, [] ,(err, row) => {
