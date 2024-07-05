@@ -1,0 +1,473 @@
+[
+    {
+        "id": "626f7cb2a81a521f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6c8958e9c6992234",
+        "type": "group",
+        "z": "626f7cb2a81a521f",
+        "name": "Dasboard",
+        "style": {
+            "stroke": "#bfdbef",
+            "fill": "#bfdbef",
+            "fill-opacity": "0.5",
+            "label": true,
+            "color": "#0070c0"
+        },
+        "nodes": [
+            "e515f0f01a3a4641",
+            "ef821ae9413ca972",
+            "1c69f3e74e818295"
+        ],
+        "x": 634,
+        "y": 59,
+        "w": 272,
+        "h": 202
+    },
+    {
+        "id": "b01761489bda0ab8",
+        "type": "group",
+        "z": "626f7cb2a81a521f",
+        "name": "MQTT Broker",
+        "style": {
+            "stroke": "#ffbfbf",
+            "fill": "#ffbfbf",
+            "fill-opacity": "0.52",
+            "label": true,
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "2e1092ef348e71da",
+            "eddecfe8098e1c3d"
+        ],
+        "x": 1114,
+        "y": 299,
+        "w": 212,
+        "h": 142
+    },
+    {
+        "id": "a6d54d60efc1c51a",
+        "type": "group",
+        "z": "626f7cb2a81a521f",
+        "name": "Consoles for checking output",
+        "style": {
+            "stroke": "#e3f3d3",
+            "fill": "#e3f3d3",
+            "fill-opacity": "0.56",
+            "label": true,
+            "color": "#92d04f"
+        },
+        "nodes": [
+            "15bd5d7dad5cb7bd",
+            "df26a9da5babd6db"
+        ],
+        "x": 594,
+        "y": 519,
+        "w": 192,
+        "h": 142
+    },
+    {
+        "id": "854e19f24f5c811a",
+        "type": "mqtt-broker",
+        "name": "Broker",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d75d125031a8f909",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d854bfbedd180967",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "756b5ec1cb9095de",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "d854bfbedd180967",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e62806e8b033933d",
+        "type": "serial-port",
+        "name": "Labor Port",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "5125c8b97f5f1b4d",
+        "type": "json",
+        "z": "626f7cb2a81a521f",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 470,
+        "y": 420,
+        "wires": [
+            [
+                "df26a9da5babd6db",
+                "15bd5d7dad5cb7bd",
+                "e515f0f01a3a4641",
+                "1b51c879289ea13f",
+                "ef821ae9413ca972"
+            ]
+        ]
+    },
+    {
+        "id": "15bd5d7dad5cb7bd",
+        "type": "debug",
+        "z": "626f7cb2a81a521f",
+        "g": "a6d54d60efc1c51a",
+        "name": "oxygen",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.SpO2",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "df26a9da5babd6db",
+        "type": "debug",
+        "z": "626f7cb2a81a521f",
+        "g": "a6d54d60efc1c51a",
+        "name": "heart rate",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.heartRate",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "1b51c879289ea13f",
+        "type": "function",
+        "z": "626f7cb2a81a521f",
+        "name": "separateInput",
+        "func": "var msg1 = {};\nvar msg2 = {};\nmsg1.payload = msg.payload.heartRate;\nmsg1.topic = 'HeartRate';\nmsg2.payload = msg.payload.SpO2;\nmsg2.topic = 'Oxygen';\nreturn [msg1, msg2];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 400,
+        "wires": [
+            [
+                "1c69f3e74e818295",
+                "2e1092ef348e71da"
+            ],
+            [
+                "1c69f3e74e818295",
+                "eddecfe8098e1c3d"
+            ]
+        ]
+    },
+    {
+        "id": "2e1092ef348e71da",
+        "type": "mqtt out",
+        "z": "626f7cb2a81a521f",
+        "g": "b01761489bda0ab8",
+        "name": "",
+        "topic": "topic/heartRate",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "854e19f24f5c811a",
+        "x": 1220,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e515f0f01a3a4641",
+        "type": "ui_text",
+        "z": "626f7cb2a81a521f",
+        "g": "6c8958e9c6992234",
+        "group": "756b5ec1cb9095de",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Read Oxygen in Blood",
+        "format": "{{msg.payload.SpO2}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 760,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ef821ae9413ca972",
+        "type": "ui_text",
+        "z": "626f7cb2a81a521f",
+        "g": "6c8958e9c6992234",
+        "group": "756b5ec1cb9095de",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Read Beats per Minute",
+        "format": "{{msg.payload.heartRate}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 770,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1c69f3e74e818295",
+        "type": "ui_chart",
+        "z": "626f7cb2a81a521f",
+        "g": "6c8958e9c6992234",
+        "name": "",
+        "group": "756b5ec1cb9095de",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "help",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "150",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#e01b24",
+            "#1c71d8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 770,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eddecfe8098e1c3d",
+        "type": "mqtt out",
+        "z": "626f7cb2a81a521f",
+        "g": "b01761489bda0ab8",
+        "name": "",
+        "topic": "topic/oxygen",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "854e19f24f5c811a",
+        "x": 1210,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "efb6458ebf0bf912",
+        "type": "comment",
+        "z": "626f7cb2a81a521f",
+        "name": "Function splits json inputs into separate outputs",
+        "info": "",
+        "x": 780,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "f926364e896b1b4a",
+        "type": "serial in",
+        "z": "626f7cb2a81a521f",
+        "name": "",
+        "serial": "e62806e8b033933d",
+        "x": 220,
+        "y": 420,
+        "wires": [
+            [
+                "5125c8b97f5f1b4d"
+            ]
+        ]
+    }
+]
