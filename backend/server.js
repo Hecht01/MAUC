@@ -1,12 +1,14 @@
 import dotenv from 'dotenv'
 import sqlite3 from 'sqlite3'
 import express from 'express'
-
+import cors from 'cors';
 
 dotenv.config({path: '../.env'});
 
 const app = express();
 const port = process.env.PORT;
+app.use(cors())
+
 
 const db = new sqlite3.Database('./Database', (err) => {
     if (err) {
@@ -74,3 +76,4 @@ app.listen(port, function (err) {
     if (err) console.log(err);
     console.log(`Server listening on PORT ${port}`);
 });
+app.use(cors({origin: 'http://localhost:5173'}))
