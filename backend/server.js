@@ -30,7 +30,7 @@ app.put('/api/insertPulseData', function (req, res)
     }
 })
 
-app.get('api/getAllPulseDataFor/:userName', async function (req, res) {
+app.get('/api/getAllPulseDataFor/:userName', async function (req, res) {
     const query = `
         SELECT *
         FROM pulseData
@@ -46,6 +46,8 @@ app.get('api/getAllPulseDataFor/:userName', async function (req, res) {
         res.status(500).send('Internal server error');
     }
 })
+
+
 
 app.listen(port, function (err) {
     if (err) console.log(err);
