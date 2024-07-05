@@ -30,7 +30,7 @@ app.put('/api/insertPulseData', function (req, res)
     }
 })
 
-app.get('api/get/allPulseDataFor/:userName', async function (req, res) {
+app.get('api/getAllPulseDataFor/:userName', async function (req, res) {
     const query = `
         SELECT *
         FROM pulseData
