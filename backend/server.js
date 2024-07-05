@@ -19,7 +19,7 @@ app.put('/api/insertPulseData', function (req, res)
 {
     const {heartRate, rawInfrared, oxygen, userName} = req.body;
     const query = `
-        INSERT INTO pulseData (timeStamp, heartRate, rawInfrared, oxygen, user_name)
+        INSERT INTO pulseData (timestamp, heartRate, rawInfrared, oxygen, user_name)
         VALUES (time ('now'), $1, $2, $3, $4)`
     try {
         db.run(query, [heartRate, rawInfrared, oxygen, userName]);
@@ -38,7 +38,7 @@ app.get('api/getAllPulseDataFor/:userName', async function (req, res) {
 
     try {
         const result = await db.each(query, [String(req.query.userName)], (err, row) => {
-            res.status(200).send(`${row.time} ${row.heartRate} ${row.rawInfrared} ${row.oxygen}`);
+            res.status(200).send(`${row.timestamp} ${row.heartRate} ${row.rawInfrared} ${row.oxygen}`);
         });
 
     } catch (err) {
