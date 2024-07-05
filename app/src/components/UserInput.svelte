@@ -39,7 +39,7 @@
     <ButtonEnter bind:username></ButtonEnter>
     <p id = "savingInProgress">saving data for {username}...</p>
 
-    <Button color="alternative" on:click = {() => updateTable('http://localhost:3000/getAllPulseDataFor/' + {username})}>Update</Button>
+    <Button color="alternative" on:click = {() => updateTable('http://localhost:3000/getAllPulseDataFor/' + username)}>Update</Button>
     <table>
         <thead>
         <tr>

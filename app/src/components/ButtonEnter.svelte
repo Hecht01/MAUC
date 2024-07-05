@@ -4,10 +4,10 @@ import {Button} from "flowbite-svelte";
 export let username:string;
 
 async function put(data: {
-    heartRate: string,
-    rawInfrared: string,
-    oxygen: string,
-    username: string
+    'heartRate': string,
+    'rawInfrared': string,
+    'oxygen': string,
+    'username': string
 }) {
     let url = "http://localhost:3000/insertPulseData";
     // Awaiting fetch which contains method,
@@ -17,7 +17,8 @@ async function put(data: {
         headers: {
             'Content-type': 'application/json'
         },
-        body: JSON.stringify(data),
+        //body: JSON.stringify(data),
+        body: JSON.parse(JSON.stringify(data))
     });
 
     console.log("Response: ", response )
@@ -31,4 +32,4 @@ async function put(data: {
 
 </script>
 
-<Button color="alternative" on:click = {() => put({'heartRate': '130', 'rawInfrared': '235', 'oxygen': '97', 'username': username})}>Enter</Button>
+<Button color="alternative" on:click = {() => put({'heartRate': "130", 'rawInfrared': "235", 'oxygen': "97", 'username': username})}>Enter</Button>
