@@ -12,7 +12,7 @@ const db = new sqlite3.Database('./Database', (err) => {
     if (err) {
         console.error(err.message);
     }
-    console.log('Connected to the database.');
+    console.log('Connected to the Database.');
 });
 
 app.put('/api/insertPulseData', function (req, res)
