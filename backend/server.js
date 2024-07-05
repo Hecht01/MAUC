@@ -15,7 +15,7 @@ const db = new sqlite3.Database('./Database', (err) => {
     console.log('Connected to the Database.');
 });
 
-app.put('/api/insertPulseData', function (req, res)
+app.put('/insertPulseData', function (req, res)
 {
     const {heartRate, rawInfrared, oxygen, userName} = req.body;
     const query = `
@@ -30,39 +30,44 @@ app.put('/api/insertPulseData', function (req, res)
     }
 })
 
-app.get('/api/getAllPulseDataFor/:userName', async function (req, res) {
+app.get('/getAllPulseDataFor/:userName', async function (req, res) {
     const query = `
         SELECT *
         FROM pulse_data
         WHERE user_name = $5`
 
     try {
-            db.each(query, [String(req.query.userName)], (err, row) => {
-            res.status(200).send(`${row.timestamp} ${row.heartRate} ${row.rawInfrared} ${row.oxygen}`);
-        });
 
+        res.status(200).send(db.all(query, [,String(req.query.userName)], function (err, row)  {
+            return `${row}`;
+        }));
     } catch (err) {
         console.error('Error executing query', err.message);
         res.status(500).send('Internal server error');
     }
 })
 
-app.get('/api/getAllPulseDataFor', async function (req, res) {
+app.get('/getAll', async function (req, res) {
     const query = `
         SELECT *
         FROM pulse_data
         `
     try {
-            const result = await db.all(query, [] ,(err, row) => {
-                console.log(result);
-            res.status(200).send(`${row.timestamp} ${row.heartRate} ${row.rawInfrared} ${row.oxygen}`);
-        });
+
+        res.status(200).send(db.get(query ,function (err, row)  {
+                console.log(row);
+                return row;
+            }));
 
     } catch (err) {
         console.error('Error executing query', err.message);
         console.log(err.message);
-        res.status(500).send('Internal server error' + err.message);
+        res.status(500).send('Internal server error ' + err.error);
     }
+})
+
+app.get('/', async function (req, res) {
+    res.status(200).send("Geht!");
 })
 
 app.listen(port, function (err) {
