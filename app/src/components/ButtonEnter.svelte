@@ -1,9 +1,9 @@
 <script lang="ts">
-import {Button} from "flowbite-svelte";
+    import {Button} from "flowbite-svelte";
 
-export let username:string;
+    export let username:string;
 
-const data = {
+const test_data = {
     heartRate: '123',
     rawInfrared: '1235',
     oxygen: '99',
@@ -21,8 +21,7 @@ async function put(url:string, data:any)
         },
         body: JSON.stringify(data),
     });
-    const resdata = await response.json();
-    return resdata;
+    return await response.json();
 }
 
 
