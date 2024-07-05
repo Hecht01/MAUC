@@ -1,7 +1,7 @@
 <script>
     import Graph from "../components/Graph.svelte";
     import UserInput from "../components/UserInput.svelte";
-    import PulsEffekt from "../components/PulsEffekt.svelte";
+    import PulsEffekt from "../components/PulseEffect.svelte";
 
 </script>
 
