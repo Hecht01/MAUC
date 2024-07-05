@@ -15,6 +15,6 @@
 <main>
     <h1>MAUC Pulse Shit</h1>
     <UserInput></UserInput>
-    <Graph></Graph>
+    <!--<Graph></Graph>-->
     <PulsEffekt></PulsEffekt>
 </main>

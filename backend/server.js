@@ -76,4 +76,5 @@ app.listen(port, function (err) {
     if (err) console.log(err);
     console.log(`Server listening on PORT ${port}`);
 });
+
 app.use(cors({origin: 'http://localhost:5173'}))

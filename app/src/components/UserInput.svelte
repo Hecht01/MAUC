@@ -1,40 +1,15 @@
 <script lang="ts">
     import { Button } from 'flowbite-svelte';
+    import ButtonEnter from "./ButtonEnter.svelte";
     let username: string = '';
-
-    async function put(url: string, data: {
-        heartRate: number,
-        rawInfrared: number,
-        oxygen: number,
-        username: string
-    }) {
-        // Awaiting fetch which contains method,
-        // headers and content-type and body
-        const response = await fetch(url, {
-            method: 'PUT',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(data),
-        });
-
-        // Awaiting response.json()
-        const resData = await response.json();
-
-        //show saving in progress message
-        hideOrShowElement()
-
-        // Return response data
-        return resData;
-    }
 
     let users: User[] = [];
 
     interface User {
+        timestamp: string;
         heartRate: string;
         oxygen: string;
         rawInfrared: string;
-        timestamp: string;
         username: string;
     }
 
@@ -43,15 +18,6 @@
         const data = await response.json();
         console.log(data);
         users = data;
-    }
-
-    function hideOrShowElement(){
-        let x = document.getElementById("savingInProgress");
-        if(x.style.display === "none"){
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
     }
 </script>
 
@@ -70,10 +36,10 @@
 <main>
     <h4>Enter username to save data for: </h4>
     <input maxlength="20" bind:value={username}/>
-    <Button color="alternative" on:click = {() => put("localhost:3000/api/insertPulseData", {'heartRate': 130, 'rawInfrared': 235, 'oxygen': 97, 'username': username})}>Enter</Button>
+    <ButtonEnter bind:username></ButtonEnter>
     <p id = "savingInProgress">saving data for {username}...</p>
 
-    <Button color="alternative" on:click = {() => updateTable('localhost:3000/api/getAllPulseDataFor/' + {username})}>Update</Button>
+    <Button color="alternative" on:click = {() => updateTable('http://localhost:3000/getAllPulseDataFor/' + {username})}>Update</Button>
     <table>
         <thead>
         <tr>
