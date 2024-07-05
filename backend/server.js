@@ -8,7 +8,7 @@ dotenv.config({path: '../.env'});
 const app = express();
 const port = process.env.PORT;
 
-const db = new sqlite3.Database('./database', (err) => {
+const db = new sqlite3.Database('./Database', (err) => {
     if (err) {
         console.error(err.message);
     }
@@ -37,7 +37,7 @@ app.get('/api/getAllPulseDataFor/:userName', async function (req, res) {
         WHERE user_name = $5`
 
     try {
-        const result = await db.each(query, [String(req.query.userName)], (err, row) => {
+            db.each(query, [String(req.query.userName)], (err, row) => {
             res.status(200).send(`${row.timestamp} ${row.heartRate} ${row.rawInfrared} ${row.oxygen}`);
         });
 
@@ -47,7 +47,23 @@ app.get('/api/getAllPulseDataFor/:userName', async function (req, res) {
     }
 })
 
+app.get('/api/getAllPulseDataFor', async function (req, res) {
+    const query = `
+        SELECT *
+        FROM pulseData
+        `
+    try {
+            const result = await db.all(query, [] ,(err, row) => {
+                console.log(result);
+            res.status(200).send(`${row.timestamp} ${row.heartRate} ${row.rawInfrared} ${row.oxygen}`);
+        });
 
+    } catch (err) {
+        console.error('Error executing query', err.message);
+        console.log(err.message);
+        res.status(500).send('Internal server error' + err.message);
+    }
+})
 
 app.listen(port, function (err) {
     if (err) console.log(err);
