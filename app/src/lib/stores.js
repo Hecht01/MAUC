@@ -1,13 +1,8 @@
 import {writable } from "svelte/store";
 
-/**
- * @type {number[]}
- */
-let heartRates = [];
-/**
- * @type {number[]}
- */
-let oxygenData = [];
-
 export const writableHeartRateArray = writable([])
 export const writableOxygenArray = writable([])
+export const writableTimestamps = writable([])
+export const lastHeartRate = writable()
+export const lastOxygen = writable()
+export const writableRawDataArray = writable([])

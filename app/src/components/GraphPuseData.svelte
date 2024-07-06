@@ -24,16 +24,15 @@
     );
     import {writableHeartRateArray} from "$lib/stores";
     import {writableOxygenArray} from "$lib/stores";
-    let date = new Date().getTime()
-    let labels_graph = [date]
-
+    import {writableTimestamps} from "$lib/stores";
 
     $: data = {
-        labels: labels_graph,
+        labels: $writableTimestamps,
         datasets: [
             {
                 label: 'Oxygen',
                 data: $writableOxygenArray,
+                borderColor: 'blue',
                 yAxisID: 'y',
                 tension: 0.3,
                 borderWidth: 2,
@@ -42,10 +41,9 @@
             {
                 label: 'Heart Rate in bpm',
                 data: $writableHeartRateArray,
-                borderColor: 'black',
+                borderColor: 'red',
                 borderWidth: 2,
                 pointRadius: 1,
-                tension:0.3,
                 fill: false,
                 yAxisID: 'y1'
             }
@@ -80,12 +78,15 @@
                       maintainAspectRatio: false,
                       scales: {
                           xAxis: {
-                              reverse: true,
                               display: true
                           },
                           y: {
-                              min: -1,
-                              max: 1
+                              min: 0,
+                              max: 100
+                          },
+                          y1: {
+                              min: 0,
+                              max: 180
                           },
                           x: {
                               display: false,

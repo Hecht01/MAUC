@@ -1,60 +1,73 @@
-//Grober mqtt Aufbau mit Hilfe von ChatGPT, dann erweitert von Hand
 import mqtt from 'mqtt';
 import {writableHeartRateArray} from "$lib/stores.js";
 import {writableOxygenArray} from "$lib/stores.js";
+import {writableTimestamps} from "$lib/stores.js";
+import {lastHeartRate} from "$lib/stores.js";
+import {lastOxygen} from "$lib/stores.js";
+import {writableRawDataArray} from "$lib/stores.js";
 
-//MQTT Connection Configuration
-const client = mqtt.connect('mqtt://localhost:1883');
+export function mqtt_innit(){
+    //MQTT Connection Configuration
+    const client = mqtt.connect('ws://localhost:9001');
 
-client.on('connect', () =>  {
-    console.log('Connected!');
-    client.subscribe('heartRate');
-    client.subscribe('oxygen');
-})
+    client.on('connect', () =>  {
+        console.log('Connected!');
+        client.subscribe('heartRate');
+        client.subscribe('oxygen');
+        client.subscribe('rawData');
+    })
 
-/**
- * @type {number[]}
- */
-let heartRates = [];
-/**
- * @type {number[]}
- */
-let oxygenData = [];
+    client.on('message', (topic, message) => {
+        if(topic === 'heartRate') {
+            addToArray(topic, Number(message));
+            addTimestamp(); //so that timestamp only gets set once for the graph
+            lastHeartRate.set(Number(message));
+        }
+        else if (topic === 'oxygen') {
+            addToArray(topic, Number(message));
+            lastOxygen.set(Number(message));
+        }
+        else if (topic === 'rawData'){
+            addToArray(topic, Number(message));
+        }
+    })
 
-client.on('message', (topic, message) => {
-    console.log(`Message received on topic ${topic}: ${Number(message)}`);
-    if(topic === 'heartRate') {
-        heartRates.push(Number(message));
-        console.log('heart rates:', heartRates);
-        addToArray(topic, Number(message));
-    }
-    else if (topic === 'oxygen') {
-        oxygenData.push(Number(message));
-        console.log('oxygen data', oxygenData);
-        addToArray(topic, Number(message));
-    }
-})
+}
 
 /**
  * @param {string} topic
  * @param {number} message
  */
 function addToArray(topic, message){
-    console.log('adding to array, I think');
     if(topic === 'heartRate') {
-        console.log("topic", topic);
-        writableHeartRateArray.update((heartRates) => {
-            heartRates.push(message);
-            return heartRates;
+        writableHeartRateArray.update((items) => {
+            // @ts-ignore
+            items.push(message);
+            return items;
         });
     }
     else if(topic === 'oxygen'){
-        console.log("topic", topic);
-        writableOxygenArray.update((oxygenData) =>{
-            oxygenData.push(message);
-            return oxygenData;
+        writableOxygenArray.update((items) =>{
+            // @ts-ignore
+            items.push(message);
+            return items;
         });
+    }
+    else if(topic === 'rawData'){
+        writableRawDataArray.update((items) =>{
+            // @ts-ignore
+            items.push(message);
+            console.log('hi  I am adding raw data');
+            return items;
+        })
     }
 }
 
-export default client;
+function addTimestamp(){
+    writableTimestamps.update((items) => {
+        let date = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
+        // @ts-ignore
+        items.push(date);
+        return items;
+    });
+}
