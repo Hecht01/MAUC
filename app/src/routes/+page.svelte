@@ -1,7 +1,7 @@
 <script>
     import GraphPulseData from "../components/GraphPuseData.svelte";
     import UserInput from "../components/UserInput.svelte";
-    import PulsEffekt from "../components/PulseEffect.svelte";
+    import PulseEffect from "../components/PulseEffect.svelte";
     import {mqtt_innit} from "$lib/mqtt.js";
     import {lastHeartRate} from "$lib/stores";
     import{lastOxygen} from "$lib/stores";
@@ -26,6 +26,6 @@
     <p>Oxygen: {$lastOxygen}</p>
     <GraphPulseData></GraphPulseData>
     <GraphRawData></GraphRawData>
-    <PulsEffekt></PulsEffekt>
+    <PulseEffect></PulseEffect>
     <UserInput></UserInput>
 </main>
