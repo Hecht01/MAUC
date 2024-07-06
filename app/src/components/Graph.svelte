@@ -22,49 +22,10 @@
         CategoryScale,
         Filler
     );
-
-    import {onMount} from "svelte";
-
-
-    let oxygen: Oxygen[];
-    let labels_graph: string[] = [];
-    let oxygen_graph: number[] = [];
-    let heartRate: HeartRate[] = [];
-    let heart_rate_graph: number[] = [];
-
-    onMount(async function () {
-        const response_price = await fetch(__API_ADDRESS__ + "/api/StockDataFor/" + title);
-        const params_price = await response_price.json();
-        const response_sentiment = await fetch(__API_ADDRESS__ + "/api/historicalSentiments/" + title);
-        const data_sentiment = await response_sentiment.json();
-        console.log(params_price);
-        console.log(data_sentiment);
-        oxygen = params_price;
-        heartRate = data_sentiment;
-        for(let i = oxygen.length-1; i >= 0; i--) {
-            oxygen_graph.push(Number(oxygen[i].stock_price_val));
-            labels_graph.push(oxygen[i].stock_price_time.slice(0, 10));
-        }
-        for(let i = heartRate.length-1; i >= 0; i--){
-            let sentiment = Math.round(Number(heartRate[i].avg_sentiment)*100)/ 100
-            heart_rate_graph.push(sentiment);
-
-        }
-        oxygen_graph = oxygen_graph;
-        heart_rate_graph = heart_rate_graph;
-    });
-
-    interface Oxygen {
-        stock_price_val: string;
-        stock_price_time: string;
-    }
-
-    interface HeartRate {
-        name: string;
-        ticker_symbol: string;
-        avg_sentiment: string;
-        pub_date: string;
-    }
+    import {writableHeartRateArray} from "$lib/stores";
+    import {writableOxygenArray} from "$lib/stores";
+    let date = new Date().getTime()
+    let labels_graph = [date]
 
 
     $: data = {
@@ -72,20 +33,15 @@
         datasets: [
             {
                 label: 'Oxygen',
-                data: heart_rate_graph,
+                data: $writableOxygenArray,
                 yAxisID: 'y',
                 tension: 0.3,
-                borderWidth: 0,
-                fill: {
-                    target: 'origin',
-                    above: 'rgba(0, 150, 100, 0.7)',
-                    below: 'rgba(255, 0, 0, 0.7)'
-                },
+                borderWidth: 2,
                 pointRadius: 1
             },
             {
                 label: 'Heart Rate in bpm',
-                data: oxygen_graph,
+                data: $writableHeartRateArray,
                 borderColor: 'black',
                 borderWidth: 2,
                 pointRadius: 1,

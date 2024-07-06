@@ -1,17 +1,15 @@
-<script lang="ts">
+<script>
     import Graph from "../components/Graph.svelte";
     import UserInput from "../components/UserInput.svelte";
     import PulsEffekt from "../components/PulseEffect.svelte";
     import  MqttClient  from "$lib/mqtt";
     import {writableHeartRateArray} from "$lib/stores";
     import {writableOxygenArray} from "$lib/stores";
+    import Updater from "../components/Updater.svelte";
 
-    let heartRates;
-    let oxygenData;
+    $: heartRates = $writableHeartRateArray;
+    $: oxygenData = $writableOxygenArray;
 
-    writableHeartRateArray.subscribe((value) => {
-        heartRates = value;
-    });
 
 </script>
 
@@ -25,16 +23,10 @@
 <main>
     <h1>MAUC Pulse Shit</h1>
     <UserInput></UserInput>
-    <!--<Graph></Graph>-->
+    <Graph></Graph>
     <PulsEffekt></PulsEffekt>
     <h2>Messages</h2>
-    <p>This is the Array I guess {heartRates}</p>
-    <div>
-        {#each $writableHeartRateArray as heartRate}
-            <p>Heart Rate: {heartRate}</p>
-        {/each}
-        {#each $writableOxygenArray as oxygen}
-            <p> Oxygen: {oxygen}</p>
-        {/each}
-    </div>
+    <p>This is the Heart Rate Array I guess {$writableHeartRateArray}</p>
+    <p>This is the Oxygen Array I guess {$writableOxygenArray}</p>
+    <Updater></Updater>
 </main>

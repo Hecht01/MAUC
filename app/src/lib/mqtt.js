@@ -13,39 +13,41 @@ client.on('connect', () =>  {
 })
 
 /**
- * @type {string[]}
+ * @type {number[]}
  */
 let heartRates = [];
 /**
- * @type {string[]}
+ * @type {number[]}
  */
 let oxygenData = [];
 
 client.on('message', (topic, message) => {
-    console.log(`Message received on topic ${topic}: ${message.toString()}`);
+    console.log(`Message received on topic ${topic}: ${Number(message)}`);
     if(topic === 'heartRate') {
-        heartRates.push(message.toString());
+        heartRates.push(Number(message));
         console.log('heart rates:', heartRates);
-        addToArray(topic, message.toString());
+        addToArray(topic, Number(message));
     }
     else if (topic === 'oxygen') {
-        oxygenData.push(message.toString());
+        oxygenData.push(Number(message));
         console.log('oxygen data', oxygenData);
-        addToArray(topic, message.toString());
+        addToArray(topic, Number(message));
     }
 })
 
 /**
  * @param {string} topic
- * @param {string} message
+ * @param {number} message
  */
 function addToArray(topic, message){
     console.log('adding to array, I think');
     if(topic === 'heartRate') {
-        writableHeartRateArray.update(([]) => heartRates);
+        console.log("topic", topic);
+        writableHeartRateArray.set(heartRates);
     }
     else if(topic === 'oxygen'){
-        writableOxygenArray.update(([]) => oxygenData);
+        console.log("topic", topic);
+        writableOxygenArray.set(oxygenData);
     }
 }
 
