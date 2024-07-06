@@ -1,0 +1,1118 @@
+[
+    {
+        "id": "626f7cb2a81a521f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6c8958e9c6992234",
+        "type": "group",
+        "z": "626f7cb2a81a521f",
+        "name": "Dasboard",
+        "style": {
+            "stroke": "#bfdbef",
+            "fill": "#bfdbef",
+            "fill-opacity": "0.5",
+            "label": true,
+            "color": "#0070c0"
+        },
+        "nodes": [
+            "e515f0f01a3a4641",
+            "ef821ae9413ca972",
+            "1c69f3e74e818295"
+        ],
+        "x": 634,
+        "y": 59,
+        "w": 272,
+        "h": 202
+    },
+    {
+        "id": "b01761489bda0ab8",
+        "type": "group",
+        "z": "626f7cb2a81a521f",
+        "name": "MQTT Broker",
+        "style": {
+            "stroke": "#ffbfbf",
+            "fill": "#ffbfbf",
+            "fill-opacity": "0.52",
+            "label": true,
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "2e1092ef348e71da",
+            "eddecfe8098e1c3d",
+            "ad264535843abac6"
+        ],
+        "x": 1334,
+        "y": 279,
+        "w": 172,
+        "h": 202
+    },
+    {
+        "id": "a6d54d60efc1c51a",
+        "type": "group",
+        "z": "626f7cb2a81a521f",
+        "name": "Consoles for checking output",
+        "style": {
+            "stroke": "#e3f3d3",
+            "fill": "#e3f3d3",
+            "fill-opacity": "0.56",
+            "label": true,
+            "color": "#92d04f"
+        },
+        "nodes": [
+            "15bd5d7dad5cb7bd",
+            "df26a9da5babd6db"
+        ],
+        "x": 594,
+        "y": 519,
+        "w": 192,
+        "h": 142
+    },
+    {
+        "id": "4405fe5b21a15079",
+        "type": "group",
+        "z": "626f7cb2a81a521f",
+        "name": "Oxygen Test Daten",
+        "style": {
+            "stroke": "#bfdbef",
+            "label": true,
+            "color": "#0070c0"
+        },
+        "nodes": [
+            "d47d59ea0493777c",
+            "976d0dee03ce73cd",
+            "6bd71337024b0b59",
+            "ab12097f153baab6",
+            "86cd2ddab483b0a0",
+            "b242e5a9f8ac6ab0"
+        ],
+        "x": 894,
+        "y": 499,
+        "w": 212,
+        "h": 382
+    },
+    {
+        "id": "ef8971b8d64b1cf1",
+        "type": "group",
+        "z": "626f7cb2a81a521f",
+        "name": "Heart Rate Test Daten",
+        "style": {
+            "stroke": "#ffbfbf",
+            "label": true,
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "22bbab78a41ffd9e",
+            "c78b672ce581ce5b",
+            "4939da2aa533fd44",
+            "437dcb9176f4a862",
+            "bf5b4f67b19601c8",
+            "4fe4ea6ef742c37a"
+        ],
+        "x": 914,
+        "y": -1,
+        "w": 232,
+        "h": 282
+    },
+    {
+        "id": "a2f4cde87b07a04e",
+        "type": "group",
+        "z": "626f7cb2a81a521f",
+        "name": "Raw Data Test Daten",
+        "style": {
+            "stroke": "#e3f3d3",
+            "label": true,
+            "color": "#92d04f"
+        },
+        "nodes": [
+            "699808fd549c5017",
+            "34f888bf9643c5d6",
+            "9c210b4de47ea5f3",
+            "e21413b8d15dcb11",
+            "1f0a6aafc02778b0",
+            "10d08d3b8a1d9602"
+        ],
+        "x": 1314,
+        "y": 679,
+        "w": 212,
+        "h": 282
+    },
+    {
+        "id": "854e19f24f5c811a",
+        "type": "mqtt-broker",
+        "name": "Broker",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d75d125031a8f909",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d854bfbedd180967",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "756b5ec1cb9095de",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "d854bfbedd180967",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e62806e8b033933d",
+        "type": "serial-port",
+        "name": "Labor Port",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "3bea143dc1de4aa7",
+        "type": "serial-port",
+        "name": "Evas Laptop Port",
+        "serialport": "COM3",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "5125c8b97f5f1b4d",
+        "type": "json",
+        "z": "626f7cb2a81a521f",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 310,
+        "y": 420,
+        "wires": [
+            [
+                "1b51c879289ea13f",
+                "ef821ae9413ca972",
+                "e515f0f01a3a4641"
+            ]
+        ]
+    },
+    {
+        "id": "15bd5d7dad5cb7bd",
+        "type": "debug",
+        "z": "626f7cb2a81a521f",
+        "g": "a6d54d60efc1c51a",
+        "name": "oxygen",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.SpO2",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "df26a9da5babd6db",
+        "type": "debug",
+        "z": "626f7cb2a81a521f",
+        "g": "a6d54d60efc1c51a",
+        "name": "heart rate",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.heartRate",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "1b51c879289ea13f",
+        "type": "function",
+        "z": "626f7cb2a81a521f",
+        "name": "separateInput",
+        "func": "var msg1 = {};\nvar msg2 = {};\nmsg1.payload = msg.payload.heartRate;\nmsg1.topic = 'HeartRate';\nmsg2.payload = msg.payload.SpO2;\nmsg2.topic = 'Oxygen';\nreturn [msg1, msg2];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 400,
+        "wires": [
+            [
+                "1c69f3e74e818295"
+            ],
+            [
+                "1c69f3e74e818295"
+            ]
+        ]
+    },
+    {
+        "id": "2e1092ef348e71da",
+        "type": "mqtt out",
+        "z": "626f7cb2a81a521f",
+        "g": "b01761489bda0ab8",
+        "name": "",
+        "topic": "heartRate",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "854e19f24f5c811a",
+        "x": 1420,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "e515f0f01a3a4641",
+        "type": "ui_text",
+        "z": "626f7cb2a81a521f",
+        "g": "6c8958e9c6992234",
+        "group": "756b5ec1cb9095de",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Read Oxygen in Blood",
+        "format": "{{msg.payload.SpO2}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 760,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ef821ae9413ca972",
+        "type": "ui_text",
+        "z": "626f7cb2a81a521f",
+        "g": "6c8958e9c6992234",
+        "group": "756b5ec1cb9095de",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Read Beats per Minute",
+        "format": "{{msg.payload.heartRate}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 770,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1c69f3e74e818295",
+        "type": "ui_chart",
+        "z": "626f7cb2a81a521f",
+        "g": "6c8958e9c6992234",
+        "name": "",
+        "group": "756b5ec1cb9095de",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "help",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "150",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#e01b24",
+            "#1c71d8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 770,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eddecfe8098e1c3d",
+        "type": "mqtt out",
+        "z": "626f7cb2a81a521f",
+        "g": "b01761489bda0ab8",
+        "name": "",
+        "topic": "oxygen",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "854e19f24f5c811a",
+        "x": 1420,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "efb6458ebf0bf912",
+        "type": "comment",
+        "z": "626f7cb2a81a521f",
+        "name": "Function splits json inputs into separate outputs",
+        "info": "",
+        "x": 780,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "f926364e896b1b4a",
+        "type": "serial in",
+        "z": "626f7cb2a81a521f",
+        "name": "",
+        "serial": "3bea143dc1de4aa7",
+        "x": 120,
+        "y": 420,
+        "wires": [
+            [
+                "5125c8b97f5f1b4d"
+            ]
+        ]
+    },
+    {
+        "id": "22bbab78a41ffd9e",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "ef8971b8d64b1cf1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "heartRate",
+        "payload": "134",
+        "payloadType": "str",
+        "x": 1040,
+        "y": 40,
+        "wires": [
+            [
+                "2e1092ef348e71da"
+            ]
+        ]
+    },
+    {
+        "id": "d47d59ea0493777c",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "4405fe5b21a15079",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "oxygen",
+        "payload": "99",
+        "payloadType": "str",
+        "x": 1010,
+        "y": 540,
+        "wires": [
+            [
+                "eddecfe8098e1c3d"
+            ]
+        ]
+    },
+    {
+        "id": "c78b672ce581ce5b",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "ef8971b8d64b1cf1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "heartRate",
+        "payload": "98",
+        "payloadType": "str",
+        "x": 1040,
+        "y": 80,
+        "wires": [
+            [
+                "2e1092ef348e71da"
+            ]
+        ]
+    },
+    {
+        "id": "4939da2aa533fd44",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "ef8971b8d64b1cf1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "heartRate",
+        "payload": "100",
+        "payloadType": "str",
+        "x": 1040,
+        "y": 120,
+        "wires": [
+            [
+                "2e1092ef348e71da"
+            ]
+        ]
+    },
+    {
+        "id": "437dcb9176f4a862",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "ef8971b8d64b1cf1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "topic": "heartRate",
+        "payload": "98",
+        "payloadType": "str",
+        "x": 1040,
+        "y": 160,
+        "wires": [
+            [
+                "2e1092ef348e71da"
+            ]
+        ]
+    },
+    {
+        "id": "bf5b4f67b19601c8",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "ef8971b8d64b1cf1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "4",
+        "topic": "heartRate",
+        "payload": "120",
+        "payloadType": "str",
+        "x": 1040,
+        "y": 200,
+        "wires": [
+            [
+                "2e1092ef348e71da"
+            ]
+        ]
+    },
+    {
+        "id": "4fe4ea6ef742c37a",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "ef8971b8d64b1cf1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "heartRate",
+        "payload": "180",
+        "payloadType": "str",
+        "x": 1040,
+        "y": 240,
+        "wires": [
+            [
+                "2e1092ef348e71da"
+            ]
+        ]
+    },
+    {
+        "id": "976d0dee03ce73cd",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "4405fe5b21a15079",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "oxygen",
+        "payload": "80",
+        "payloadType": "str",
+        "x": 1010,
+        "y": 600,
+        "wires": [
+            [
+                "eddecfe8098e1c3d"
+            ]
+        ]
+    },
+    {
+        "id": "6bd71337024b0b59",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "4405fe5b21a15079",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "oxygen",
+        "payload": "86",
+        "payloadType": "str",
+        "x": 1010,
+        "y": 660,
+        "wires": [
+            [
+                "eddecfe8098e1c3d"
+            ]
+        ]
+    },
+    {
+        "id": "ab12097f153baab6",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "4405fe5b21a15079",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "topic": "oxygen",
+        "payload": "95",
+        "payloadType": "str",
+        "x": 1010,
+        "y": 720,
+        "wires": [
+            [
+                "eddecfe8098e1c3d"
+            ]
+        ]
+    },
+    {
+        "id": "86cd2ddab483b0a0",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "4405fe5b21a15079",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "4",
+        "topic": "oxygen",
+        "payload": "100",
+        "payloadType": "str",
+        "x": 1010,
+        "y": 780,
+        "wires": [
+            [
+                "eddecfe8098e1c3d"
+            ]
+        ]
+    },
+    {
+        "id": "b242e5a9f8ac6ab0",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "4405fe5b21a15079",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "oxygen",
+        "payload": "90",
+        "payloadType": "str",
+        "x": 1010,
+        "y": 840,
+        "wires": [
+            [
+                "eddecfe8098e1c3d"
+            ]
+        ]
+    },
+    {
+        "id": "699808fd549c5017",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "a2f4cde87b07a04e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rawData",
+        "payload": "24",
+        "payloadType": "str",
+        "x": 1430,
+        "y": 720,
+        "wires": [
+            [
+                "ad264535843abac6"
+            ]
+        ]
+    },
+    {
+        "id": "ad264535843abac6",
+        "type": "mqtt out",
+        "z": "626f7cb2a81a521f",
+        "g": "b01761489bda0ab8",
+        "name": "",
+        "topic": "rawData",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "854e19f24f5c811a",
+        "x": 1420,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "34f888bf9643c5d6",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "a2f4cde87b07a04e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "rawData",
+        "payload": "20",
+        "payloadType": "str",
+        "x": 1430,
+        "y": 760,
+        "wires": [
+            [
+                "ad264535843abac6"
+            ]
+        ]
+    },
+    {
+        "id": "9c210b4de47ea5f3",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "a2f4cde87b07a04e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "rawData",
+        "payload": "18",
+        "payloadType": "str",
+        "x": 1430,
+        "y": 800,
+        "wires": [
+            [
+                "ad264535843abac6"
+            ]
+        ]
+    },
+    {
+        "id": "e21413b8d15dcb11",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "a2f4cde87b07a04e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "topic": "rawData",
+        "payload": "15",
+        "payloadType": "str",
+        "x": 1430,
+        "y": 840,
+        "wires": [
+            [
+                "ad264535843abac6"
+            ]
+        ]
+    },
+    {
+        "id": "1f0a6aafc02778b0",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "a2f4cde87b07a04e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "4",
+        "topic": "rawData",
+        "payload": "20",
+        "payloadType": "str",
+        "x": 1430,
+        "y": 880,
+        "wires": [
+            [
+                "ad264535843abac6"
+            ]
+        ]
+    },
+    {
+        "id": "10d08d3b8a1d9602",
+        "type": "inject",
+        "z": "626f7cb2a81a521f",
+        "g": "a2f4cde87b07a04e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "rawData",
+        "payload": "22",
+        "payloadType": "str",
+        "x": 1430,
+        "y": 920,
+        "wires": [
+            [
+                "ad264535843abac6"
+            ]
+        ]
+    }
+]
