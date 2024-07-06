@@ -10,7 +10,6 @@
     $: heartRates = $writableHeartRateArray;
     $: oxygenData = $writableOxygenArray;
 
-
 </script>
 
 <style>

@@ -26,7 +26,8 @@ app.put('/insertPulseData', function (req, res)
 
     const query = `
         INSERT INTO pulse_data (timestamp, heartRate, rawInfrared, oxygen, user_name)
-        VALUES (time ('now'), $1, $2, $3, $4)`
+        VALUES (time ('now'), $1, $2, $3, $4)
+        `
     try {
         db.run(query, [heartRate, rawInfrared, oxygen, userName]);
         console.log(`heartRate: ${heartRate}, rawInfrared: ${rawInfrared}, oxygen: ${oxygen}`);
@@ -44,7 +45,6 @@ app.get('/getAllPulseDataFor/:userName', async function (req, res) {
         WHERE user_name = $5`
 
     try {
-
         res.status(200).send(db.all(query, [,String(req.query.userName)], function (err, row)  {
             return `${row}`;
         }));
@@ -60,7 +60,6 @@ app.get('/getAll', async function (req, res) {
         FROM pulse_data
         `
     try {
-
         res.status(200).send(db.get(query ,function (err, row)  {
                 console.log(row);
                 return row;
@@ -73,9 +72,6 @@ app.get('/getAll', async function (req, res) {
     }
 })
 
-app.get('/', async function (req, res) {
-    res.status(200).send("Geht!");
-})
 
 app.listen(port, function (err) {
     if (err) console.log(err);

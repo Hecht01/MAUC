@@ -43,11 +43,17 @@ function addToArray(topic, message){
     console.log('adding to array, I think');
     if(topic === 'heartRate') {
         console.log("topic", topic);
-        writableHeartRateArray.set(heartRates);
+        writableHeartRateArray.update((heartRates) => {
+            heartRates.push(message);
+            return heartRates;
+        });
     }
     else if(topic === 'oxygen'){
         console.log("topic", topic);
-        writableOxygenArray.set(oxygenData);
+        writableOxygenArray.update((oxygenData) =>{
+            oxygenData.push(message);
+            return oxygenData;
+        });
     }
 }
 

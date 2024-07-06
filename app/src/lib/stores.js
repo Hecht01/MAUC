@@ -9,5 +9,5 @@ let heartRates = [];
  */
 let oxygenData = [];
 
-export const writableHeartRateArray = writable(heartRates)
-export const writableOxygenArray = writable(oxygenData)
+export const writableHeartRateArray = writable([])
+export const writableOxygenArray = writable([])
