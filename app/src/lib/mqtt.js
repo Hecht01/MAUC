@@ -5,6 +5,7 @@ import {writableTimestamps} from "$lib/stores.js";
 import {lastHeartRate} from "$lib/stores.js";
 import {lastOxygen} from "$lib/stores.js";
 import {writableRawDataArray} from "$lib/stores.js";
+import {animateHeart} from "$lib/stores.js";
 
 export function mqtt_innit(){
     //MQTT Connection Configuration
@@ -29,6 +30,7 @@ export function mqtt_innit(){
         }
         else if (topic === 'rawData'){
             addToArray(topic, Number(message));
+            animateHeart.update((n) => (!n));
         }
     })
 
