@@ -39,7 +39,7 @@
         </div>
     {:else}
         <div class = "img_holder" in:fade out:fade>
-            <div class = "image" id = "image">
+            <div class = "image_placeholder" id = "image_placeholder">
                 <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
             </div>
         </div>
