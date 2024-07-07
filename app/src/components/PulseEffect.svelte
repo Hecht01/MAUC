@@ -1,6 +1,6 @@
 <script lang="ts">
     import heart from "$lib/assets/heart.png"
-    import { scale } from "svelte/transition";
+    import { scale, fade } from "svelte/transition";
 
     let animate = true;
     let checked = true;
@@ -38,7 +38,7 @@
             </div>
         </div>
     {:else}
-        <div class = "img_holder">
+        <div class = "img_holder" in:fade out:fade>
             <div class = "image" id = "image">
                 <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
             </div>
