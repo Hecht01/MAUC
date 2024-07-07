@@ -57,7 +57,6 @@ function addToArray(topic, message){
         writableRawDataArray.update((items) =>{
             // @ts-ignore
             items.push(message);
-            console.log('hi  I am adding raw data');
             return items;
         })
     }
