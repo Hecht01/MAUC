@@ -25,24 +25,26 @@
 </style>
 
 <main>
-<div class="pulse_effect">
-    <label>
-        <input type="checkbox" bind:checked={checked} />
-        Enable/ Disable Pulse Effect
-    </label>
+    <div class="pulse_effect">
+        <label>
+            <input type="checkbox" bind:checked={checked} />
+            Enable/ Disable Pulse Effect
+        </label>
 
-    {#if checked}
-        <div class = "img_holder" in:scale out:scale>
-            <div class = "image" id = "image">
-                <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
+        {#if checked}
+            {#if animate}
+                <div class = "img_holder" in:scale out:scale>
+                    <div class = "image" id = "image">
+                        <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
+                    </div>
+                </div>
+            {/if}
+        {:else}
+            <div class = "img_holder" in:fade out:fade>
+                <div class = "image_placeholder" id = "image_placeholder">
+                    <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
+                </div>
             </div>
-        </div>
-    {:else}
-        <div class = "img_holder" in:fade out:fade>
-            <div class = "image_placeholder" id = "image_placeholder">
-                <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
-            </div>
-        </div>
-    {/if}
-</div>
+        {/if}
+    </div>
 </main>
