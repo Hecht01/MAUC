@@ -1,5 +1,6 @@
 <script lang="ts">
     import heart from "$lib/assets/heart.png"
+    import heartBeat from "$lib/heartbeat.mp3"
     import { scale, fade } from "svelte/transition";
     import {animateHeart} from "$lib/stores";
 
@@ -33,7 +34,6 @@
             <input type="checkbox" bind:checked={checked} />
             Enable/ Disable Pulse Effect
         </label>
-
         {#if checked}
             <!-- Div to keep the space for the pulse effect -->
             <div class = "save_space">
