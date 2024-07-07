@@ -19,8 +19,8 @@
         justify-content: center;
     }
     .image{
-        width: 140px;
-        height: 140px;
+        height: fit-content;
+        width: auto;
     }
 </style>
 
@@ -37,9 +37,12 @@
                 <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
             </div>
         </div>
-
     {:else}
-        <p>Check to box to reenable the heartbeat.</p>
+        <div class = "img_holder">
+            <div class = "image" id = "image">
+                <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
+            </div>
+        </div>
     {/if}
 </div>
 </main>
