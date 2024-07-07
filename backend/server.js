@@ -3,13 +3,16 @@ import sqlite3 from 'sqlite3'
 import express from 'express'
 import cors from 'cors';
 
+//init for the env variables
 dotenv.config({path: '../.env'});
 
 const app = express();
 const port = process.env.PORT;
+
+//required to send requests to different ports
 app.use(cors())
 
-
+// init database connection
 const db = new sqlite3.Database('./Database', (err) => {
     if (err) {
         console.error(err.message);
@@ -17,6 +20,7 @@ const db = new sqlite3.Database('./Database', (err) => {
     console.log('Connected to the Database.');
 });
 
+//RESTful PUT endpoint to add data to the Database
 app.put('/insertPulseData', function (req, res)
 {
     const heartRate = req.body.heartRate;
@@ -38,7 +42,8 @@ app.put('/insertPulseData', function (req, res)
     }
 })
 
-app.get('/getAllPulseDataFor/:userName', async function (req, res) {
+//RESTful GET endpoint to retrieve Data from Database by User
+app.get('/getAlldPulseDataFor/:userName', async function (req, res) {
     const query = `
         SELECT *
         FROM pulse_data
@@ -54,6 +59,7 @@ app.get('/getAllPulseDataFor/:userName', async function (req, res) {
     }
 })
 
+//RESTful GET endpoint to retrieve all Data from Database
 app.get('/getAll', async function (req, res) {
     const query = `
         SELECT *
@@ -72,10 +78,11 @@ app.get('/getAll', async function (req, res) {
     }
 })
 
-
+//Init Server to recieve requests
 app.listen(port, function (err) {
     if (err) console.log(err);
     console.log(`Server listening on PORT ${port}`);
 });
 
+//Defines other Port that is allowed to access server
 app.use(cors({origin: 'http://localhost:5173'}))

@@ -26,6 +26,8 @@
     import {writableOxygenArray} from "$lib/stores";
     import {writableTimestamps} from "$lib/stores";
 
+    //Dynamic data using the store "writeableTimestamps" as labels, contains 2 data points to display Oxygen
+    // and Pulse data in the same graph as 2 separate lines
     $: data = {
         labels: $writableTimestamps,
         datasets: [
@@ -69,6 +71,8 @@
 
 <main>
     <h2>Pulse Data Graph</h2>
+
+    <!-- Displays the Pulse Data graph with 2 lines, blue for Oxygen and red for Pulse data -->
     <div class="graph">
         <Line data = {data}
               height = {700}

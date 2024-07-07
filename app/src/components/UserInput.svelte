@@ -5,6 +5,7 @@
 
     let users: User[] = [];
 
+    //Interface to get the correct user data and simplify data displaying
     interface User {
         timestamp: string;
         heartRate: string;
@@ -13,6 +14,7 @@
         username: string;
     }
 
+    //Updates the table
     async function updateTable(url: string){
         const response = await fetch(url)
         const data = await response.json();
@@ -35,11 +37,14 @@
 
 <main>
     <h4>Enter username to save data for: </h4>
+    <!-- Button to save the Username to display only that user-->
     <input maxlength="20" bind:value={username}/>
     <ButtonEnter bind:username></ButtonEnter>
     <p id = "savingInProgress">saving data for {username}...</p>
 
+    <!-- Button to update the Table, retrieves Data from database for the current user  -->
     <Button color="alternative" on:click = {() => updateTable('http://localhost:3000/getAllPulseDataFor/' + username)}>Update</Button>
+    <!-- Table to display the data from the database -->
     <table>
         <thead>
         <tr>

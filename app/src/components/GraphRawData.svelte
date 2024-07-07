@@ -25,6 +25,7 @@
     import {writableRawDataArray} from "$lib/stores";
     import {writableTimestamps} from "$lib/stores";
 
+    // Dynamic Data using the store writableTimestamps as labels
     $: data = {
         labels: $writableTimestamps,
         datasets: [
@@ -58,6 +59,8 @@
 </style>
 
 <main>
+
+    <!-- Displays the raw data dynamically as a line graph, updated on message via the stores-->
     <h2>Pulse Data Graph</h2>
     <div class="graph">
         <Line data = {data}

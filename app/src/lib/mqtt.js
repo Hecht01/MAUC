@@ -11,6 +11,7 @@ export function mqtt_innit(){
     //MQTT Connection Configuration
     const client = mqtt.connect('ws://localhost:9001');
 
+    //subscribes to relevant MQTT topics to receive the Data
     client.on('connect', () =>  {
         console.log('Connected!');
         client.subscribe('heartRate');
@@ -18,6 +19,7 @@ export function mqtt_innit(){
         client.subscribe('rawData');
     })
 
+    //On message all stores are updated and the timestamp is saved to display the data in the graph
     client.on('message', (topic, message) => {
         if(topic === 'heartRate') {
             addToArray(topic, Number(message));
@@ -40,6 +42,7 @@ export function mqtt_innit(){
  * @param {string} topic
  * @param {number} message
  */
+//Adds the received data to the arrays/stores
 function addToArray(topic, message){
     if(topic === 'heartRate') {
         writableHeartRateArray.update((items) => {
@@ -64,6 +67,7 @@ function addToArray(topic, message){
     }
 }
 
+//adds the timestamp for displaying the data in the Graph
 function addTimestamp(){
     writableTimestamps.update((items) => {
         let date = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();

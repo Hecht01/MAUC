@@ -10,8 +10,10 @@ const test_data = {
     username: 'Andy'
 }
 
+// defines the URl for the put Endpoint
 const url:string = "http://localhost:3000/insertPulseData"
 
+    //function to put data into the SQLite Database via JSON
 async function put(url:string, data:any)
 {
     const response = await fetch(url, {
