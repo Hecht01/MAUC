@@ -1,8 +1,8 @@
 <script lang="ts">
     import heart from "$lib/assets/heart.png"
     import { scale, fade } from "svelte/transition";
+    import {animateHeart} from "$lib/stores";
 
-    let animate = true;
     let checked = true;
 
 </script>
@@ -22,6 +22,9 @@
         height: fit-content;
         width: auto;
     }
+    .save_space{
+        height: 228px;
+    }
 </style>
 
 <main>
@@ -32,15 +35,18 @@
         </label>
 
         {#if checked}
-            {#if animate}
+            <div class = "save_space">
+            
+            {#if $animateHeart === true}
                 <div class = "img_holder" in:scale out:scale>
                     <div class = "image" id = "image">
                         <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
                     </div>
                 </div>
             {/if}
+            </div>
         {:else}
-            <div class = "img_holder" in:fade out:fade>
+            <div class = "img_holder" in:fade>
                 <div class = "image_placeholder" id = "image_placeholder">
                     <img src ={heart} alt = "red heart symbol with a blue line that signifies the heartbeat"/>
                 </div>

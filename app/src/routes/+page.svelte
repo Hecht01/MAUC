@@ -1,5 +1,5 @@
 <script>
-    import GraphPulseData from "../components/GraphPuseData.svelte";
+    import GraphPulseData from "../components/GraphPulseData.svelte";
     import UserInput from "../components/UserInput.svelte";
     import PulseEffect from "../components/PulseEffect.svelte";
     import {mqtt_innit} from "$lib/mqtt.js";
