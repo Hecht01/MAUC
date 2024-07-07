@@ -25,7 +25,7 @@
 
 <main>
     <!-- Loads the components and displays the stores dynamically -->
-    <h1>MAUC Pulse Measurement</h1>a
+    <h1>MAUC Pulse Measurement</h1>
     <p>Heart Rate: {$lastHeartRate}</p>
     <p>Oxygen: {$lastOxygen}</p>
     <GraphPulseData></GraphPulseData>
