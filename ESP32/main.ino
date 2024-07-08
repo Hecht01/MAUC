@@ -70,10 +70,10 @@ void setup()
     }
 
     if(!sensor.begin(){
-        Serial.println("FAILED PulseOximeter");
+        Serial.println("FAILED Pulsemesser");
         for(;;);
     } else {
-        Serial.println("SUCCESS PulseOximeter");
+        Serial.println("SUCCESS Pulsemesser");
     }
 
     pox.setIRLedCurrent(MAX30100_LED_CURR_7_6MA);
