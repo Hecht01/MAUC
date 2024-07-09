@@ -21,21 +21,26 @@ const db = new sqlite3.Database('./Database', (err) => {
 });
 
 //RESTful PUT endpoint to add data to the Database
-app.put('/insertPulseData', async function (req, res)
+app.put('/insertPulseData', function (req, res)
 {
-    console.log("LOG body: " + JSON.parse(req.body));
-    const {heartRate, rawInfrared, oxygen, userName}  = JSON.parse(req.body);
+    console.log("Recieved:" + req.body);
+    let temp = JSON.parse(req.body);
+
+    let heartRate = temp.heartRate;
+    const rawInfrared = temp.rawInfrared;
+    const oxygen = temp.oxygen;
+    const userName = temp.username;
 
     const query = `
         INSERT INTO pulse_data (timestamp, heartRate, rawInfrared, oxygen, user_name)
         VALUES (time ('now'), $1, $2, $3, $4)
         `
     try {
-        db.run(query, [heartRate, rawInfrared, oxygen, userName]);
+        res = db.run(query, [heartRate, rawInfrared, oxygen, userName]);
         console.log(`heartRate: ${heartRate}, rawInfrared: ${rawInfrared}, oxygen: ${oxygen}`);
         res.status(200).json({"dataInserted": [heartRate, rawInfrared, oxygen]});
     } catch (err) {
-        console.log("LOG body: " + JSON.parse(req.body));
+        console.log("LOG body: " + req.body);
         console.error('Error executing query', err.message);
         res.status(500).send('Internal server error');
     }
