@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Button } from 'flowbite-svelte';
     import ButtonEnter from "./ButtonEnter.svelte";
-    let username: string = '';
+    $: currentUsername = '';
 
     let users: User[] = [];
 
@@ -11,7 +11,7 @@
         heartRate: string;
         oxygen: string;
         rawInfrared: string;
-        username: string;
+        user_name: string;
     }
 
     //Updates the table
@@ -39,9 +39,9 @@
 <main>
     <h4>Enter username to save data for: </h4>
     <!-- Button to save the Username to display only that user-->
-    <input maxlength="20" bind:value={username}/>
-    <ButtonEnter bind:username></ButtonEnter>
-    <p id = "savingInProgress">saving data for {username}...</p>
+    <input maxlength="20" bind:value={currentUsername}/>
+    <ButtonEnter bind:currentUsername></ButtonEnter>
+    <p id = "savingInProgress">saving data for {currentUsername}...</p>
 
     <!-- Button to update the Table, retrieves Data from database for the current user  -->
     <Button color="alternative" on:click = {() => updateTable('http://localhost:3000/getAll')}>Update</Button>
@@ -58,15 +58,15 @@
         </thead>
         <tbody>
         {#each users as user}
-            {#if user.username = username}
+
             <tr>
-                <td>{username}</td>
+                <td>{user.user_name}</td>
                 <td>{user.timestamp}</td>
                 <td>{user.heartRate}</td>
                 <td>{user.oxygen}</td>
                 <td>{user.rawInfrared}</td>
             </tr>
-            {/if}
+
         {/each}
         </tbody>
     </table>

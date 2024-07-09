@@ -1,15 +1,11 @@
 <script lang="ts">
     import {Button} from "flowbite-svelte";
     import {changeNodeRed} from "$lib/mqtt";
+    import {lastRawData} from "$lib/stores";
+    import {lastOxygen} from "$lib/stores";
+    import {lastHeartRate} from "$lib/stores";
 
-    export let username:string;
-
-const test_data = {
-    heartRate: '123',
-    rawInfrared: '1235',
-    oxygen: '99',
-    username: 'Andy'
-}
+    export let currentUsername:string;
 
 // defines the URl for the put Endpoint
 const url:string = "http://localhost:3000/insertPulseData"
@@ -39,9 +35,6 @@ async function  put(data:any){
     return resData;
 }
 
-
-
-
 //function to put data into the SQLite Database via JSON
     function toggleNodeRed(){
     if(textOrChart.group.show === "Dashboard_Text"){
@@ -63,8 +56,11 @@ async function  put(data:any){
 </script>
 
 <main>
-<h2>{username}</h2>
+<h2>{currentUsername}</h2>
 <Button color="alternative" on:click = {() => toggleNodeRed()}>toggle Node-Red</Button>
-<Button color="alternative" on:click = {() =>put({"heartRate": 130, "rawInfrared":235, "oxygen":97, "username": 'Andy'})}>Enter</Button>
-
+<Button color="alternative" on:click = {() =>put({
+    "heartRate": $lastHeartRate,
+    "rawInfrared": $lastRawData,
+    "oxygen": $lastOxygen,
+    "username": currentUsername.toString()})}>Enter</Button>
 </main>
