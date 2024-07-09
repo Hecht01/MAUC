@@ -19,17 +19,19 @@ let textOrChart = { "group": {
     }
 }
     //function to put data into the SQLite Database via JSON
-async function put(url:string, data:any)
+function put(url:string, data:any)
 {
-    const response = await fetch(url, {
+    console.log(JSON.parse(data));
+    fetch(url, {
         method: 'PUT',
         headers: {
-            'Content-type': 'application/json'
+            'Content-type': 'text/plain'
         },
-        body: JSON.stringify(data),
+        body: JSON.parse(data)
+    }).then(function(res) {
+        return res.json();
     });
 
-    return response.json();
 }
 
 function toggleNodeRed(){
@@ -54,6 +56,6 @@ function toggleNodeRed(){
 <main>
 <h2>{username}</h2>
 <Button color="alternative" on:click = {() => toggleNodeRed()}>toggle Node-Red</Button>
-<Button color="alternative" on:click = {() =>put(url, '{"heartRate": 130,"rawInfrared": 235,"oxygen": 97,"username": username}')}>Enter</Button>
+<Button color="alternative" on:click = {() =>put(url, '{"heartRate":130, "rawInfrared":235, "oxygen":97, "username":' + String(username) +'}')}>Enter</Button>
 
 </main>
