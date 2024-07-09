@@ -41,10 +41,10 @@ export function mqtt_innit(){
 }
 
 /**
- * @param {string} message
+ * @param {JSON} message
  */
 export function changeNodeRed(message) {
-    MQTTClient.publish("group03/config", message)
+    MQTTClient.publish("group03/config", JSON.stringify(message))
 }
 
 /**

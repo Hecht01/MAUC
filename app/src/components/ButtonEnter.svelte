@@ -13,7 +13,11 @@ const test_data = {
 
 // defines the URl for the put Endpoint
 const url:string = "http://localhost:3000/insertPulseData"
-let textOrChart = "text"
+let textOrChart = { "group": {
+        "show": "Dashboard_Text",
+        "hide": "Dashboard_Charts",
+    }
+}
     //function to put data into the SQLite Database via JSON
 async function put(url:string, data:any)
 {
@@ -29,10 +33,18 @@ async function put(url:string, data:any)
 }
 
 function toggleNodeRed(){
-    if(textOrChart == "text"){
-        textOrChart = "chart";
+    if(textOrChart.group.show === "Dashboard_Text"){
+        textOrChart = { "group": {
+                "show": "Dashboard_Charts",
+                "hide": "Dashboard_Text",
+            }
+        };
     } else{
-        textOrChart = "text";
+        textOrChart = { "group": {
+                "show": "Dashboard_Text",
+                "hide": "Dashboard_Charts",
+            }
+        };
     }
     changeNodeRed(textOrChart);
 }
