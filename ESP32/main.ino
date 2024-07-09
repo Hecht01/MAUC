@@ -61,11 +61,19 @@ void setup()
     sensor.setSamplingRate(SAMPLING_RATE);
     sensor.setHighresModeEnabled(HIGHRES_MODE);
 
+
     if (!pox.begin()) {
-        Serial.println("FAILED");
+        Serial.println("FAILED PulseOximeter");
         for(;;);
     } else {
-        Serial.println("SUCCESS");
+        Serial.println("SUCCESS PulseOximeter");
+    }
+
+    if(!sensor.begin(){
+        Serial.println("FAILED Pulsemesser");
+        for(;;);
+    } else {
+        Serial.println("SUCCESS Pulsemesser");
     }
 
     pox.setIRLedCurrent(MAX30100_LED_CURR_7_6MA);
@@ -76,11 +84,14 @@ void loop()
     uint16_t ir, red;
 
     pox.update();
+    sensor.update()
 
     if (millis() - tsLastReport > REPORTING_PERIOD_MS) {
-        String json = "{\"heartRate\":" + String(pox.getHeartRate()) + ",\"SpO2\":" + String(pox.getSpO2()) + "}";
+        while(sensor.getRawValues(&ir, &red)){
+        String json = "{\"heartRate\":" + String(pox.getHeartRate()) + ",\"SpO2\":" + String(pox.getSpO2()) + ",\"rawData\":" + String(ir) + "}";
         Serial.println(json);
 
         tsLastReport = millis();
+        }
     }
 }
