@@ -47,6 +47,12 @@ PulseOximeter pox;
 
 uint32_t tsLastReport = 0;
 
+boolean pulse = 0;
+
+void onBeat(){
+    pulse = 1;
+}
+
 void setup()
 {
     Serial.begin(115200);
@@ -77,6 +83,7 @@ void setup()
     }
 
     pox.setIRLedCurrent(MAX30100_LED_CURR_7_6MA);
+    pox.setOnBeatDetectedCallback(onBeat);
 }
 
 void loop()
@@ -84,14 +91,15 @@ void loop()
     uint16_t ir, red;
 
     pox.update();
-    sensor.update()
+    sensor.update();
+    sensor.getRawValues(&ir, &red);
 
     if (millis() - tsLastReport > REPORTING_PERIOD_MS) {
-        while(sensor.getRawValues(&ir, &red)){
-        String json = "{\"heartRate\":" + String(pox.getHeartRate()) + ",\"SpO2\":" + String(pox.getSpO2()) + ",\"rawData\":" + String(ir) + "}";
+        String json = "{\"heartRate\":" + String(pox.getHeartRate()) + ",\"SpO2\":" + String(pox.getSpO2()) + ",\"rawData\":" + String(ir) + ",\"SpO2\":" + String(pox.getSpO2()) + "}";
         Serial.println(json);
 
         tsLastReport = millis();
-        }
+
     }
+    pulse = 0;
 }
