@@ -1,5 +1,5 @@
 import mqtt from 'mqtt';
-import {writableHeartRateArray} from "$lib/stores.js";
+import {lastRawData, writableHeartRateArray} from "$lib/stores.js";
 import {writableOxygenArray} from "$lib/stores.js";
 import {writableTimestamps} from "$lib/stores.js";
 import {lastHeartRate} from "$lib/stores.js";
@@ -19,6 +19,7 @@ export function mqtt_innit(){
         client.subscribe('group03/heartRate');
         client.subscribe('group03/oxygen');
         client.subscribe('group03/rawData');
+        client.subscribe('group03/pulseConnected');
     })
 
     //On message all stores are updated and the timestamp is saved to display the data in the graph
@@ -34,7 +35,11 @@ export function mqtt_innit(){
         }
         else if (topic === 'group03/rawData'){
             addToArray(topic, Number(message));
-            animateHeart.update((n) => (!n));
+            lastRawData.set(Number(message));
+        }
+        else if (topic === 'group03/pulseConnected'){
+            animateHeart.update((n) => (Boolean(Number(message))));
+            console.log(Boolean(Number(message)));
         }
     })
 
