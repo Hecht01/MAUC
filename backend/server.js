@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 //required to send requests to different ports
 app.use(cors())
+app.use(express.json())
 
 // init database connection
 const db = new sqlite3.Database('./Database', (err) => {
@@ -24,7 +25,7 @@ const db = new sqlite3.Database('./Database', (err) => {
 app.put('/insertPulseData', function (req, res)
 {
     console.log("Recieved:" + req.body);
-    let temp = JSON.parse(req.body);
+    let temp = req.body;
 
     let heartRate = temp.heartRate;
     const rawInfrared = temp.rawInfrared;
@@ -36,7 +37,7 @@ app.put('/insertPulseData', function (req, res)
         VALUES (time ('now'), $1, $2, $3, $4)
         `
     try {
-        res = db.run(query, [heartRate, rawInfrared, oxygen, userName]);
+        db.run(query, [heartRate, rawInfrared, oxygen, userName]);
         console.log(`heartRate: ${heartRate}, rawInfrared: ${rawInfrared}, oxygen: ${oxygen}`);
         res.status(200).json({"dataInserted": [heartRate, rawInfrared, oxygen]});
     } catch (err) {

@@ -19,38 +19,30 @@ let textOrChart = { "group": {
         "hide": "Dashboard_Charts",
     }
 }
-    class EasyHTTP {
-
-        // Make an HTTP PUT Request
-        async put(url, data) {
-
-            // Awaiting fetch which contains method,
-            // headers and content-type and body
-            const response = await fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-
-            // Awaiting response.json()
-            const resData = await response.json();
-
-            // Return response data
-            return resData;
-        }
-    }
-
-    const http = new EasyHTTP;
 
 //function to put data into the SQLite Database via JSON
-async function  put(data:any) {
-    http.put(url, JSON.stringify(data))
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
+async function  put(data:any){
+    // Awaiting fetch which contains method,
+    // headers and content-type and body
+    const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    // Awaiting response.json()
+    const resData = await response.json();
+
+    // Return response data
+    return resData;
 }
 
+
+
+
+//function to put data into the SQLite Database via JSON
     function toggleNodeRed(){
     if(textOrChart.group.show === "Dashboard_Text"){
         textOrChart = { "group": {
@@ -73,6 +65,6 @@ async function  put(data:any) {
 <main>
 <h2>{username}</h2>
 <Button color="alternative" on:click = {() => toggleNodeRed()}>toggle Node-Red</Button>
-<Button color="alternative" on:click = {() =>put({heartRate:130, rawInfrared:235, oxygen:97, username: String(username) })}>Enter</Button>
+<Button color="alternative" on:click = {() =>put({"heartRate": 130, "rawInfrared":235, "oxygen":97, "username": 'Andy'})}>Enter</Button>
 
 </main>
