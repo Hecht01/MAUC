@@ -7,7 +7,7 @@ import cors from 'cors';
 dotenv.config({path: '../.env'});
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 //required to send requests to different ports
 app.use(cors())
@@ -21,7 +21,7 @@ const db = new sqlite3.Database('./Database', (err) => {
 });
 
 //RESTful PUT endpoint to add data to the Database
-app.put('/insertPulseData', function (req, res)
+app.put('/insertPulseData', async function (req, res)
 {
     const heartRate = req.body.heartRate;
     const rawInfrared = req.body.rawInfrared
@@ -35,7 +35,7 @@ app.put('/insertPulseData', function (req, res)
     try {
         db.run(query, [heartRate, rawInfrared, oxygen, userName]);
         console.log(`heartRate: ${heartRate}, rawInfrared: ${rawInfrared}, oxygen: ${oxygen}`);
-        res.status(200).send({heartRate, rawInfrared, oxygen});
+        res.status(200).send([heartRate, rawInfrared, oxygen]);
     } catch (err) {
         console.error('Error executing query', err.message);
         res.status(500).send('Internal server error');
@@ -50,9 +50,11 @@ app.get('/getAllPulseDataFor/:userName', async function (req, res) {
         WHERE user_name = $1`
 
     try {
-        res.status(200).send(db.all(query, [String(req.query.userName), ], function (err, row)  {
-            return `${row}`;
-        }));
+        db.all(query, [String(req.params.userName), ], function (err, rows)  {
+            res.status(200).json({"data" : rows})
+        }
+    )
+        ;
     } catch (err) {
         console.error('Error executing query', err.message);
         res.status(500).send('Internal server error');
@@ -66,13 +68,14 @@ app.get('/getAll', async function (req, res) {
         FROM pulse_data
         `
     try {
-
-        res.status(200).send(db.all(query ,function (err, row)  {
-                console.log(row);
-                return row;
-            })
-        );
-
+        console.log("Request Working!");
+        db.all(query, [], (err,rows) => {
+            res.json({
+                "message": "success",
+                "data" : rows
+            }).status(200)
+        });
+        
     } catch (err) {
         console.error('Error executing query', err.message);
         console.log(err.message);
