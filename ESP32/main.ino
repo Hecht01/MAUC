@@ -95,7 +95,7 @@ void loop()
     sensor.getRawValues(&ir, &red);
 
     if (millis() - tsLastReport > REPORTING_PERIOD_MS) {
-        String json = "{\"heartRate\":" + String(pox.getHeartRate()) + ",\"SpO2\":" + String(pox.getSpO2()) + ",\"rawData\":" + String(ir) + ",\"SpO2\":" + String(pox.getSpO2()) + "}";
+        String json = "{\"heartRate\":" + String(pox.getHeartRate()) + ",\"SpO2\":" + String(pox.getSpO2()) + ",\"rawData\":" + String(ir) + ",\"SpO2\":" + String(pulse) + "}";
         Serial.println(json);
 
         tsLastReport = millis();
