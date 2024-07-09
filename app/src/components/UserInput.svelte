@@ -20,6 +20,7 @@
         const data = await response.json();
         console.log(data);
         users = data;
+
     }
 </script>
 
@@ -43,7 +44,7 @@
     <p id = "savingInProgress">saving data for {username}...</p>
 
     <!-- Button to update the Table, retrieves Data from database for the current user  -->
-    <Button color="alternative" on:click = {() => updateTable('http://localhost:3000/getAllPulseDataFor/' + username)}>Update</Button>
+    <Button color="alternative" on:click = {() => updateTable('http://localhost:3000/getAll')}>Update</Button>
     <!-- Table to display the data from the database -->
     <table>
         <thead>
@@ -57,6 +58,7 @@
         </thead>
         <tbody>
         {#each users as user}
+            {#if user.username = username}
             <tr>
                 <td>{username}</td>
                 <td>{user.timestamp}</td>
@@ -64,6 +66,7 @@
                 <td>{user.oxygen}</td>
                 <td>{user.rawInfrared}</td>
             </tr>
+            {/if}
         {/each}
         </tbody>
     </table>

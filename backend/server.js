@@ -43,14 +43,14 @@ app.put('/insertPulseData', function (req, res)
 })
 
 //RESTful GET endpoint to retrieve Data from Database by User
-app.get('/getAlldPulseDataFor/:userName', async function (req, res) {
+app.get('/getAllPulseDataFor/:userName', async function (req, res) {
     const query = `
         SELECT *
         FROM pulse_data
-        WHERE user_name = $5`
+        WHERE user_name = $1`
 
     try {
-        res.status(200).send(db.all(query, [,String(req.query.userName)], function (err, row)  {
+        res.status(200).send(db.all(query, [String(req.query.userName), ], function (err, row)  {
             return `${row}`;
         }));
     } catch (err) {
@@ -66,10 +66,12 @@ app.get('/getAll', async function (req, res) {
         FROM pulse_data
         `
     try {
-        res.status(200).send(db.get(query ,function (err, row)  {
+
+        res.status(200).send(db.all(query ,function (err, row)  {
                 console.log(row);
                 return row;
-            }));
+            })
+        );
 
     } catch (err) {
         console.error('Error executing query', err.message);
