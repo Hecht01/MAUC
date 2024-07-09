@@ -7,7 +7,7 @@ import {lastOxygen} from "$lib/stores.js";
 import {writableRawDataArray} from "$lib/stores.js";
 import {animateHeart} from "$lib/stores.js";
 
-const MQTTClient = mqtt.connect('http://localhost:9001');
+const MQTTClient = mqtt.connect('ws://10.10.131.27:1884');
 export function mqtt_innit(){
     //MQTT Connection Configuration
 
