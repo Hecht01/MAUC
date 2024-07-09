@@ -35,7 +35,7 @@ app.put('/insertPulseData', async function (req, res)
     try {
         db.run(query, [heartRate, rawInfrared, oxygen, userName]);
         console.log(`heartRate: ${heartRate}, rawInfrared: ${rawInfrared}, oxygen: ${oxygen}`);
-        res.status(200).send([heartRate, rawInfrared, oxygen]);
+        res.status(200).json({"dataInserted": [heartRate, rawInfrared, oxygen]});
     } catch (err) {
         console.error('Error executing query', err.message);
         res.status(500).send('Internal server error');
@@ -50,7 +50,7 @@ app.get('/getAllPulseDataFor/:userName', async function (req, res) {
         WHERE user_name = $1`
 
     try {
-        db.all(query, [String(req.params.userName), ], function (err, rows)  {
+        db.all(query, [String(req.params.userName)], function (err, rows)  {
             res.status(200).json({"data" : rows})
         }
     )
