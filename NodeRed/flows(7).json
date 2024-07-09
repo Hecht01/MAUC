@@ -1,0 +1,894 @@
+[
+    {
+        "id": "085335ea7f6cd272",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f84c8bbf17f4de67",
+        "type": "group",
+        "z": "085335ea7f6cd272",
+        "name": "Dasboard",
+        "style": {
+            "stroke": "#bfdbef",
+            "fill": "#bfdbef",
+            "fill-opacity": "0.5",
+            "label": true,
+            "color": "#0070c0"
+        },
+        "nodes": [
+            "3125d24176c4b956",
+            "bf8c8b4e02bce53b",
+            "c1be31e7ad014c48"
+        ],
+        "x": 648,
+        "y": 593,
+        "w": 484,
+        "h": 334
+    },
+    {
+        "id": "8393106af8ee0274",
+        "type": "group",
+        "z": "085335ea7f6cd272",
+        "name": "MQTT Broker",
+        "style": {
+            "stroke": "#ffbfbf",
+            "fill": "#ffbfbf",
+            "fill-opacity": "0.52",
+            "label": true,
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "7cfa2859735d9720",
+            "83d1c87315ccc5c8",
+            "7e50f3694865de06"
+        ],
+        "x": 1154,
+        "y": 399,
+        "w": 232,
+        "h": 202
+    },
+    {
+        "id": "521189c39441ef35",
+        "type": "group",
+        "z": "085335ea7f6cd272",
+        "name": "Consoles for checking output",
+        "style": {
+            "stroke": "#e3f3d3",
+            "fill": "#e3f3d3",
+            "fill-opacity": "0.56",
+            "label": true,
+            "color": "#92d04f"
+        },
+        "nodes": [
+            "697b6eb0c0252aa1",
+            "acab3c930db16566"
+        ],
+        "x": 494,
+        "y": 219,
+        "w": 192,
+        "h": 142
+    },
+    {
+        "id": "3125d24176c4b956",
+        "type": "group",
+        "z": "085335ea7f6cd272",
+        "g": "f84c8bbf17f4de67",
+        "name": "Oxygen",
+        "style": {
+            "stroke": "#0070c0",
+            "label": true,
+            "color": "#0070c0"
+        },
+        "nodes": [
+            "37d5d25480519aa4",
+            "9ea0a693ae2933bf"
+        ],
+        "x": 674,
+        "y": 719,
+        "w": 412,
+        "h": 82
+    },
+    {
+        "id": "bf8c8b4e02bce53b",
+        "type": "group",
+        "z": "085335ea7f6cd272",
+        "g": "f84c8bbf17f4de67",
+        "name": "Heart Rate",
+        "style": {
+            "stroke": "#0070c0",
+            "label": true,
+            "color": "#0070c0"
+        },
+        "nodes": [
+            "9245a76d14fa5d93",
+            "9c8e9bac40a70d61"
+        ],
+        "x": 674,
+        "y": 619,
+        "w": 432,
+        "h": 82
+    },
+    {
+        "id": "c1be31e7ad014c48",
+        "type": "group",
+        "z": "085335ea7f6cd272",
+        "g": "f84c8bbf17f4de67",
+        "name": "Raw Data",
+        "style": {
+            "stroke": "#0070c0",
+            "label": true,
+            "color": "#0070c0"
+        },
+        "nodes": [
+            "08a54ade42984a44",
+            "114b4ace67bef972"
+        ],
+        "x": 674,
+        "y": 819,
+        "w": 432,
+        "h": 82
+    },
+    {
+        "id": "d854bfbedd180967",
+        "type": "ui_tab",
+        "name": "chart",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d75d125031a8f909",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "756b5ec1cb9095de",
+        "type": "ui_group",
+        "name": "Heart Rate",
+        "tab": "d854bfbedd180967",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "854e19f24f5c811a",
+        "type": "mqtt-broker",
+        "name": "Broker",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e3f4c9005b595f91",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "dev/tty/USB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "100"
+    },
+    {
+        "id": "03f2df650556a4f2",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "e62806e8b033933d",
+        "type": "serial-port",
+        "name": "Labor Port",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "b3a004a1cddcb686",
+        "type": "ui_group",
+        "name": "Oxygen",
+        "tab": "d854bfbedd180967",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "27ef960cc6302952",
+        "type": "ui_group",
+        "name": "Raw Data",
+        "tab": "d854bfbedd180967",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e573b25ecd03e28d",
+        "type": "mqtt-broker",
+        "name": "hivemq broker",
+        "broker": "ssl://a34349a0691d431bb8c6b3bb3208545b.s1.eu.hivemq.cloud:8883",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b9396f10dd5623f3",
+        "type": "mqtt-broker",
+        "name": "Labor Broker",
+        "broker": "10.10.131.27",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "407fbaf7b500c47e",
+        "type": "ui_tab",
+        "name": "text",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ada0dea4594b5fcf",
+        "type": "ui_group",
+        "name": "Oxygen",
+        "tab": "407fbaf7b500c47e",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b194e450a31125b9",
+        "type": "ui_group",
+        "name": "Raw Data",
+        "tab": "407fbaf7b500c47e",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "526686cdde8b4e8c",
+        "type": "ui_group",
+        "name": "Heart Rate",
+        "tab": "407fbaf7b500c47e",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f1c4e8ed0fd23e4c",
+        "type": "json",
+        "z": "085335ea7f6cd272",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 480,
+        "wires": [
+            [
+                "acab3c930db16566",
+                "697b6eb0c0252aa1",
+                "5ae8403c31fa4b24",
+                "9c8e9bac40a70d61",
+                "9ea0a693ae2933bf",
+                "08a54ade42984a44"
+            ]
+        ]
+    },
+    {
+        "id": "697b6eb0c0252aa1",
+        "type": "debug",
+        "z": "085335ea7f6cd272",
+        "d": true,
+        "g": "521189c39441ef35",
+        "name": "oxygen",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.SpO2",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "acab3c930db16566",
+        "type": "debug",
+        "z": "085335ea7f6cd272",
+        "d": true,
+        "g": "521189c39441ef35",
+        "name": "heart rate",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.heartRate",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5ae8403c31fa4b24",
+        "type": "function",
+        "z": "085335ea7f6cd272",
+        "name": "separateInput",
+        "func": "var msg1 = {};\nvar msg2 = {};\nvar msg3 = {};\nmsg1.payload = msg.payload.heartRate;\nmsg1.topic = 'HeartRate';\nmsg2.payload = msg.payload.SpO2;\nmsg2.topic = 'Oxygen';\nmsg3.payload = msg.payload.rawData;\nmsg3.topic = 'RawData';\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 480,
+        "wires": [
+            [
+                "7cfa2859735d9720",
+                "9245a76d14fa5d93"
+            ],
+            [
+                "83d1c87315ccc5c8",
+                "37d5d25480519aa4"
+            ],
+            [
+                "7e50f3694865de06",
+                "114b4ace67bef972"
+            ]
+        ]
+    },
+    {
+        "id": "7cfa2859735d9720",
+        "type": "mqtt out",
+        "z": "085335ea7f6cd272",
+        "g": "8393106af8ee0274",
+        "name": "",
+        "topic": "group03/heartRate",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b9396f10dd5623f3",
+        "x": 1270,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "83d1c87315ccc5c8",
+        "type": "mqtt out",
+        "z": "085335ea7f6cd272",
+        "g": "8393106af8ee0274",
+        "name": "",
+        "topic": "group03/oxygen",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b9396f10dd5623f3",
+        "x": 1260,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "717c5173bbbc3db0",
+        "type": "comment",
+        "z": "085335ea7f6cd272",
+        "name": "Function splits json inputs into separate outputs",
+        "info": "",
+        "x": 800,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "217495deeb134fbe",
+        "type": "serial in",
+        "z": "085335ea7f6cd272",
+        "name": "Arduino",
+        "serial": "e62806e8b033933d",
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "f1c4e8ed0fd23e4c"
+            ]
+        ]
+    },
+    {
+        "id": "9245a76d14fa5d93",
+        "type": "ui_chart",
+        "z": "085335ea7f6cd272",
+        "g": "bf8c8b4e02bce53b",
+        "name": "",
+        "group": "756b5ec1cb9095de",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "chart heart rate",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#e01b24",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1000,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37d5d25480519aa4",
+        "type": "ui_chart",
+        "z": "085335ea7f6cd272",
+        "g": "3125d24176c4b956",
+        "name": "",
+        "group": "b3a004a1cddcb686",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "chart oxygen",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 990,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c8e9bac40a70d61",
+        "type": "ui_text",
+        "z": "085335ea7f6cd272",
+        "g": "bf8c8b4e02bce53b",
+        "group": "526686cdde8b4e8c",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "heart rate",
+        "format": "{{msg.payload.heartRate}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 760,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "9ea0a693ae2933bf",
+        "type": "ui_text",
+        "z": "085335ea7f6cd272",
+        "g": "3125d24176c4b956",
+        "group": "ada0dea4594b5fcf",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "oxygen",
+        "format": "{{msg.payload.SpO2}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 760,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "08a54ade42984a44",
+        "type": "ui_text",
+        "z": "085335ea7f6cd272",
+        "g": "c1be31e7ad014c48",
+        "group": "b194e450a31125b9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "raw data",
+        "format": "{{msg.payload.rawData}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 760,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "7e50f3694865de06",
+        "type": "mqtt out",
+        "z": "085335ea7f6cd272",
+        "g": "8393106af8ee0274",
+        "name": "",
+        "topic": "group03/rawData",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b9396f10dd5623f3",
+        "x": 1270,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "114b4ace67bef972",
+        "type": "ui_chart",
+        "z": "085335ea7f6cd272",
+        "g": "c1be31e7ad014c48",
+        "name": "",
+        "group": "27ef960cc6302952",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "chart raw data",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2ca02c",
+            "#98df8a",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1000,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ceabacaab1d8d946",
+        "type": "mqtt in",
+        "z": "085335ea7f6cd272",
+        "name": "",
+        "topic": "group03/config",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "854e19f24f5c811a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 700,
+        "wires": [
+            [
+                "1e67eb42b0d46878",
+                "4345408bd4c78e56"
+            ]
+        ]
+    },
+    {
+        "id": "1e67eb42b0d46878",
+        "type": "debug",
+        "z": "085335ea7f6cd272",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "4345408bd4c78e56",
+        "type": "ui_ui_control",
+        "z": "085335ea7f6cd272",
+        "name": "Switch tabs",
+        "events": "change",
+        "x": 430,
+        "y": 660,
+        "wires": [
+            [
+                "9c8e9bac40a70d61",
+                "9ea0a693ae2933bf",
+                "08a54ade42984a44",
+                "9245a76d14fa5d93",
+                "37d5d25480519aa4",
+                "114b4ace67bef972"
+            ]
+        ]
+    }
+]
