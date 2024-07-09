@@ -30,7 +30,7 @@ app.put('/insertPulseData', function (req, res)
     let heartRate = temp.heartRate;
     const rawInfrared = temp.rawInfrared;
     const oxygen = temp.oxygen;
-    const userName = temp.username;
+    const userName = String(temp.username);
 
     const query = `
         INSERT INTO pulse_data (timestamp, heartRate, rawInfrared, oxygen, user_name)
