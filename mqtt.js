@@ -9,11 +9,11 @@ import {animateHeart} from "$lib/stores.js";
 
 const MQTTClient = mqtt.connect('ws://10.10.131.27:1884');
 export function mqtt_innit(){
-    //MQTT Connection Configuration
+    //** MQTT Connection Configuration +/
 
     const client = MQTTClient;
 
-    //subscribes to relevant MQTT topics to receive the Data
+    //** subscribes to relevant MQTT topics to receive the Data */
     client.on('connect', () =>  {
         console.log('Connected!');
         client.subscribe('group03/heartRate');
@@ -21,7 +21,7 @@ export function mqtt_innit(){
         client.subscribe('group03/rawData');
     })
 
-    //On message all stores are updated and the timestamp is saved to display the data in the graph
+    //** On message all stores are updated and the timestamp is saved to display the data in the graph */
     client.on('message', (topic, message) => {
         if(topic === 'group03/heartRate') {
             addToArray(topic, Number(message));
@@ -41,6 +41,7 @@ export function mqtt_innit(){
 }
 
 /**
+ * Enables publishing of messages to config
  * @param {JSON} message
  */
 export function changeNodeRed(message) {
@@ -48,10 +49,10 @@ export function changeNodeRed(message) {
 }
 
 /**
+ * Adds the received data to the arrays/stores
  * @param {string} topic
  * @param {number} message
  */
-//Adds the received data to the arrays/stores
 function addToArray(topic, message){
     if(topic === 'group03/heartRate') {
         writableHeartRateArray.update((items) => {
@@ -76,7 +77,7 @@ function addToArray(topic, message){
     }
 }
 
-//adds the timestamp for displaying the data in the Graph
+//** adds the timestamp for displaying the data in the Graph */
 function addTimestamp(){
     writableTimestamps.update((items) => {
         let date = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
